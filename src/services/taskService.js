@@ -2,12 +2,32 @@ const { v4: uuidv4 } = require('uuid');
 
 let tasks = [];
 
+/**
+ * Retrieve all tasks
+ * @returns {Array} Array of task objects
+ */
 const getAll = () => [...tasks];
 
+/**
+ * Find a specific task by uniquely generated ID
+ * @param {string} id - Task UUID
+ * @returns {Object|undefined} Task object if found
+ */
 const findById = (id) => tasks.find((t) => t.id === id);
 
+/**
+ * Filter tasks by their current status
+ * @param {string} status - The status to filter by ('todo', 'in_progress', 'done')
+ * @returns {Array} List of matching tasks
+ */
 const getByStatus = (status) => tasks.filter((t) => t.status === status);
 
+/**
+ * Retrieve a paginated subset of tasks
+ * @param {number} page - The current page number (1-indexed)
+ * @param {number} limit - Number of tasks per page
+ * @returns {Array} Subset of tasks
+ */
 const getPaginated = (page, limit) => {
   const pageNum = Math.max(1, page);
   const offset = (pageNum - 1) * limit;
