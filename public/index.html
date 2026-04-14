@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskVault ✨ Premium Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+    
+    <div class="container glass-panel">
+        <header>
+            <h1>TaskVault</h1>
+            <div class="stats" id="stats-container">
+                <span class="stat-badge todo">0 To Do</span>
+                <span class="stat-badge in-progress">0 In Progress</span>
+                <span class="stat-badge done">0 Done</span>
+            </div>
+        </header>
+
+        <form id="task-form" class="task-form">
+            <input type="text" id="task-title" placeholder="What needs to be done?" required autocomplete="off">
+            <button type="submit" class="btn-primary">Add Task</button>
+        </form>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Tasks</button>
+            <button class="filter-btn" data-filter="todo">To Do</button>
+            <button class="filter-btn" data-filter="in_progress">In Progress</button>
+            <button class="filter-btn" data-filter="done">Completed</button>
+        </div>
+
+        <ul id="task-list" class="task-list">
+            <!-- Tasks injected via JS -->
+            <div class="loading">Loading tasks...</div>
+        </ul>
+    </div>
+
+    <!-- Modal for assigning -->
+    <div id="assign-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <h3>Assign Task</h3>
+            <input type="text" id="assignee-name" placeholder="Enter assignee name..." autocomplete="off">
+            <div class="modal-actions">
+                <button id="cancel-assign" class="btn-secondary">Cancel</button>
+                <button id="confirm-assign" class="btn-primary">Assign</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
