@@ -3,6 +3,10 @@ const router = express.Router();
 const taskService = require('../services/taskService');
 const { validateCreateTask, validateUpdateTask, validateAssignTask } = require('../utils/validators');
 
+/**
+ * Route: GET /tasks/stats
+ * Returns overall statistics for tasks
+ */
 router.get('/stats', (req, res) => {
   const stats = taskService.getStats();
   res.json(stats);
