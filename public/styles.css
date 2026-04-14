@@ -1,3 +1,7 @@
+/** 
+ * TaskVault Premium Theme
+ * Provides glassmorphism and animated blobs
+ */
 :root {
     --bg-gradient: linear-gradient(135deg, #1e0040 0%, #080016 100%);
     --glass-bg: rgba(255, 255, 255, 0.05);
