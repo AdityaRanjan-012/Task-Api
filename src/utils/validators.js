@@ -1,6 +1,11 @@
 const VALID_STATUSES = ['todo', 'in_progress', 'done'];
 const VALID_PRIORITIES = ['low', 'medium', 'high'];
 
+/**
+ * Validates incoming POST payload for task creation
+ * @param {Object} body - Request body
+ * @returns {string|null} Error message or null if valid
+ */
 const validateCreateTask = (body) => {
   if (!body.title || typeof body.title !== 'string' || body.title.trim() === '') {
     return 'title is required and must be a non-empty string';
